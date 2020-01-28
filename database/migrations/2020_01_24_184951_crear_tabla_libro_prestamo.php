@@ -20,7 +20,7 @@ class CrearTablaLibroPrestamo extends Migration
             $table->unsignedInteger('libro_id');
             $table->foreign('libro_id', 'fk_libroprestamo_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
             $table->date('fecha_prestamo');
-            $table->strng('prestado_a',100);
+            $table->striphpng('prestado_a',100);
             $table->boolean('estado');
             $table->date('fecha_devolucion')->nullable();
             $table->timestamps();
