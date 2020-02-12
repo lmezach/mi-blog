@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\admin\Rol;
 
 class RolController extends Controller
 {
@@ -14,7 +15,9 @@ class RolController extends Controller
      */
     public function index()
     {
-        //
+       $datas = Rol::orderBy('id')->get();
+       return view('admin.rol.index',compact('datas'));
+    
     }
 
     /**

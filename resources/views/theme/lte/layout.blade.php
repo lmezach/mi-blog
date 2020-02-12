@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" >
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>UNEFA | Secretaría</title>
+        <title>UNEFA | @yield('titulo','unefa')</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,8 @@
         
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        
+
+        @yield('styles')
         <!-- Theme style -->
         <link rel="stylesheet" href='{{asset("assets/$theme/dist/css/adminlte.min.css")}}'>
         <!-- Google Font: Source Sans Pro -->
@@ -33,13 +34,21 @@
 
 
   <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
+        <section class="content">
+
+          @yield('contenido')
+
+        </section>
    
+  </div>
+  <!-- /.content-wrapper -->
   <!-- /.content-wrapper -->
 
 
 
-        </div>
       <!--inici footer-->
       @include("theme/$theme/footer")
       <!--fin footer-->
@@ -51,5 +60,6 @@
         <script src='{{asset("assets/$theme/dist/js/adminlte.min.js")}}'></script>
         <!-- AdminLTE for demo purposes -->
         <script src='{{asset("assets/$theme/dist/js/demo.js")}}'></script>
+        @yield('scripts')
     </body>
 </html>
